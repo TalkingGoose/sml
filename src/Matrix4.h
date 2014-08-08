@@ -392,7 +392,7 @@ class Matrix4_t {
                 xy - wz, 1 - (xx + zz), yz + wx, 0.0f,
                 xz + wy, yz - wx, 1 - (xx + yy), 0.0f,
                 0.0f, 0.0f, 0.0f, 1.0f
-                );
+            );
         }
 };
 

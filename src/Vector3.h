@@ -33,13 +33,6 @@ struct Vector3_t {
             this->z = static_cast<T>(other.z);
         }
 
-        /// Attempt to get the values of another unknown type and set the vector's values to them
-        /// WARNING: Could cause undefined functionality
-        template<typename U>
-        Vector3_t(const U & unknown) {
-            memcpy(&x, &unknown.x, sizeof(T) * 3);
-        }
-
         /// Initialise the vector with the given X, Y and Z values
         Vector3_t(T a, T b, T c) {
             x = a; y = b; z = c;
@@ -75,15 +68,6 @@ struct Vector3_t {
             this->x = other.x;
             this->y = other.y;
             this->z = other.z;
-
-            return (*this);
-        }
-
-        /// Attempt to get the values of another unknown type and set the vectors values to them
-        /// WARNING: Could cause undefined functionality
-        template<typename U>
-        Vector3_t & Set(const U & unknown) {
-            memcpy(&x, &unknown.x, sizeof(T) * 3);
 
             return (*this);
         }

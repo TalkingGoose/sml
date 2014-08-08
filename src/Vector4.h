@@ -34,13 +34,6 @@ struct Vector4_t {
             this->w = static_cast<T>(other.w);
         }
 
-        /// Attempt to get the values of another unknown type and set the vector's values to them
-        /// WARNING: Could cause undefined functionality
-        template<typename U>
-        Vector4_t(const U & unknown) {
-            memcpy(&x, &unknown.x, sizeof(T) * 4);
-        }
-
         /// Initialise the vector with the given X, Y, Z and W values
         Vector4_t(T a, T b, T c, T d) {
             x = a; y = b; z = c; w = d;

@@ -34,13 +34,6 @@ struct Vector2_t {
             this->y = static_cast<T>(other.y);
         }
 
-        /// Attempt to get the values of another unknown type and set the vector's values to them
-        /// WARNING: Could cause undefined functionality
-        template<typename U>
-        Vector2_t(const U & unknown) {
-            memcpy(&x, &unknown.x, sizeof(T) * 2);
-        }
-
         /// Initialise the vector with the given X and Y values
         Vector2_t(T a, T b) {
             x = a; y = b;
@@ -58,15 +51,6 @@ struct Vector2_t {
         Vector2_t & Set(const Vector2_t & other) {
             this->x = other.x;
             this->y = other.y;
-
-            return (*this);
-        }
-
-        /// Attempt to get the values of another unknown type and set the vectors values to them
-        /// WARNING: Could cause undefined functionality
-        template<typename U>
-        Vector2_t & Set(const U & unknown) {
-            memcpy(&x, &unknown.x, sizeof(T) * 2);
 
             return (*this);
         }
